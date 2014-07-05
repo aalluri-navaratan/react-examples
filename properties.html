@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setting Properties</title>
+    <script src="react-0.8.0.js"></script>
+  <script src="JSXTransformer-0.8.0.js"></script>
+</head>
+<body>
+<script type="text/jsx">
+    /*** @jsx React.DOM */
+    var APP = React.createClass({
+        getDefaultProps:function(){
+            return {
+                txt:'Anil',
+                cat: 8184943954
+            }
+        },
+        propTypes:{
+            txt:React.PropTypes.string.isRequired,
+            cat:React.PropTypes.number
+        },
+        render:function(){
+            console.log(this.props.txt)
+            return (
+                    <div>
+                    <table>
+                        <tr>
+                            <th>Name:</th>
+                            <th>Phone:</th>
+                        </tr>
+                        <tr>               
+                            <td>{this.props.txt}</td>
+                            <td>{this.props.cat}</td>
+                        </tr>
+                    </table>
+                                               
+                    </div>
+                    )
+        }
+    });
+
+    React.renderComponent(<APP cat={123456789} text = "Anil Kumar . Alluri" />,document.body)
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setState</title>
+    <script src="react-0.8.0.js"></script>
+  <script src="JSXTransformer-0.8.0.js"></script>
+</head>
+<body>
+<script type="text/jsx">
+    /*** @jsx React.DOM */
+    var APP = React.createClass({
+        getInitialState:function(){
+            return {name:'ur Name',phone: 0}
+        },
+        updateTxt:function(e){
+            this.setState({name:e.target.value})
+        },updateCat:function(e){
+            this.setState({phone:e.target.value})
+        },
+        render:function(){
+            return (
+                        <div>
+                            <h3>Enter Ur Name :</h3>
+                            <input type="text" onChange= {this.updateTxt} />
+                            <h3>Enter Ur phone :</h3>
+                            <input type="text" onChange=  {this.updateCat } />
+                                       
+                            <table>
+                                 <tr>
+                                     <th>Name:</th>
+                                    <th>Phone:</th>
+                                 </tr>
+                                 <tr>               
+                                     <td>{this.state.name}</td>
+                                     <td>{this.state.phone}</td>
+                                </tr>
+                            
+                            </table> 
+                        </div>
+                    )
+        }
+    });
+
+    React.renderComponent(
+        <APP name="this is the txt prop" />,
+        document.body)
+</script>
+</body>
+</html>
