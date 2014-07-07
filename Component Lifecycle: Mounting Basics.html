@@ -20,9 +20,8 @@
     /** @jsx React.DOM */
     var APP = 
         React.createClass({
-           update: function(){
-                 var newVal = this.props.val + 1 
-                 this.setProps({val:newVal})
+           updateTxt:function(e){
+            this.setState({name:e.target.value + 1})
             },
             componentWillMount:function(){
                 console.log("componentWillMount")

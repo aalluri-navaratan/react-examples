@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setState</title>
+    <script src="build/react-0.8.0.js"></script>
+    <script src="http://fb.me/react-with-addons-0.10.0.js"></script>
+  <script src="build/JSXTransformer-0.8.0.js"></script>
+</head>
+<body>
+<div id="mountNode"></div>
+<script type="text/jsx">
+
+/** @jsx React.DOM */
+
+// var SetIntervalMixin = {
+//   componentWillMount: function() {
+//     console.log('componentDidMount before');
+//     this.intervals = [];
+//     console.log('componentDidMount before');
+//   },
+//   setInterval: function() {
+//     console.log('componentDidMount before');
+//     this.intervals.push(setInterval.apply(null, arguments));
+//     console.log('componentDidMount before');
+//   },
+//   componentWillUnmount: function() {
+//     console.log('componentDidMount before');
+//     this.intervals.map(clearInterval);
+//     console.log('componentDidMount before');
+//   }
+// };
+
+var Timer = React.createClass({
+  getInitialState: function() {
+    return {
+            secondsElapsed: 0
+    };
+  },
+  tick: function() {
+    console.log('tick before state--->')
+    this.setState({secondsElapsed: this.state.secondsElapsed + 1});
+    console.log('tick after state--->')
+  },
+  componentDidMount: function() {
+    console.log('componentDidMount before');
+    this.interval = setInterval(this.tick, 10);
+    console.log('componentDidMount after');
+  },
+   render: function() {
+    return (
+      <div>Seconds Elapsed  : {this.state.secondsElapsed}</div>
+    );
+  }
+});
+
+React.renderComponent(<Timer />,document.getElementById("mountNode"));
+</script>
+</body>
+</html>

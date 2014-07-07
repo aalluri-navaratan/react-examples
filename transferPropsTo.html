@@ -20,10 +20,10 @@
                 return (
                     <div>
                         <BButton href="javascript:alert('hello btn-primary')" className="btn-primary">
-                        <BIcon className="glyphicon-heart" /> Button</BButton>
+                        <BIcon className="glyphicon-heart" /> Button</BButton><br/>
 
                         <BButton href="javascript:alert('hello btn-success')" className="btn-success">
-                        <BIcon className="glyphicon-pencil" /> Button</BButton>
+                        <BIcon className="glyphicon-pencil" /> Button</BButton><br/>
                         
                         <BButton href="javascript:alert('hello btn-danger')" className="btn-danger">
                         <BIcon className="glyphicon-inbox" /> Button</BButton>
@@ -46,9 +46,7 @@
             }
         });
 
-    React.renderComponent(
-        <APP />,
-        document.body)
+    React.renderComponent(<APP />,document.body)
 </script>
 </body>
 </html>

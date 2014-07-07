@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setState</title>
+    <!--<script src="http://fb.me/react-js-fiddle-integration.js"></script>-->
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.5.1/react.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.5.1/JSXTransformer.js"></script> -->
+    <script src="build/react-0.8.0.js"></script>
+    <script src="build/JSXTransformer-0.8.0.js"></script>
+    <script src="http://fb.me/react-with-addons-0.10.0.js"></script>
+
+</head>
+<body>
+<script type="text/jsx">
+/** @jsx React.DOM */
+var Editor = React.createClass({
+  componentDidMount: function() {
+    var editor = this.refs.editor;
+    editor.getDOMNode().focus();
+  },
+  render: function() {
+    return (
+      <div id='content-header'>
+        <textarea ref='editor' className='expanding' placeholder='Share whats new...' style={{minHeight: 100}}>
+        </textarea>
+      </div>
+    );
+  }
+});
+
+React.renderComponent(<Editor />, document.body);
+</script>
+</body>
+</html>

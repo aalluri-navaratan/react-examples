@@ -15,20 +15,18 @@
  <script type="text/jsx">
  /** @jsx React.DOM */
 var Clock = React.createClass({
-  render: function() {
-    return (
-      <div onClick={this.sayHi}>
-        The time is: {this.props.when.toLocaleString()}
-      </div>
-    );
-  },
   sayHi: function() {
     alert("Hello");
+  },
+  render: function() {
+    return (
+      <div onClick={this.sayHi}>The time is: {this.props.when.toLocaleString()}</div>
+    );
   }
 });
  
 React.renderComponent(
-  <Clock when={new Date()} />,
+  <Clock when= { new Date() } />,
   document.body
 );
 

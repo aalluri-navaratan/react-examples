@@ -11,11 +11,13 @@
     /*** @jsx React.DOM */
     var APP = React.createClass({
         getInitialState:function(){
-            return {name:'ur Name',phone: 0}
+            return {name:'ur Name',
+                    phone: 0}
         },
         updateTxt:function(e){
             this.setState({name:e.target.value})
-        },updateCat:function(e){
+        },
+        updateCat:function(e){
             this.setState({phone:e.target.value})
         },
         render:function(){

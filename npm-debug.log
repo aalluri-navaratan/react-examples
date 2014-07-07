@@ -1,24 +1,40 @@
 info it worked if it ends with ok
-verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
+verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install', '-g', 'jsxhint' ]
 info using npm@1.1.4
 info using node@v0.6.19
 verbose config file /home/nmora/.npmrc
 verbose config file /usr/etc/npmrc
 verbose config file /usr/share/npm/npmrc
-ERR! Couldn't read dependencies.
-ERR! Error: ENOENT, open '/home/nmora/Documents/react-examples/package.json'
+verbose cache add [ 'jsxhint', null ]
+silly cache add: name, spec, args [ undefined, 'jsxhint', [ 'jsxhint', null ] ]
+verbose parsed url { pathname: 'jsxhint', path: 'jsxhint', href: 'jsxhint' }
+verbose addNamed [ 'jsxhint', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'jsxhint', '', false ]
+verbose raw, before any munging jsxhint
+verbose url resolving [ 'https://registry.npmjs.org/', './jsxhint' ]
+verbose url resolved https://registry.npmjs.org/jsxhint
+http GET https://registry.npmjs.org/jsxhint
+ERR! Error: failed to fetch from registry: jsxhint
+ERR!     at /usr/share/npm/lib/utils/npm-registry-client/get.js:139:12
+ERR!     at cb (/usr/share/npm/lib/utils/npm-registry-client/request.js:31:9)
+ERR!     at Request._callback (/usr/share/npm/lib/utils/npm-registry-client/request.js:136:18)
+ERR!     at Request.callback (/usr/lib/nodejs/request/main.js:119:22)
+ERR!     at Request.<anonymous> (/usr/lib/nodejs/request/main.js:212:58)
+ERR!     at Request.emit (events.js:88:20)
+ERR!     at ClientRequest.<anonymous> (/usr/lib/nodejs/request/main.js:209:10)
+ERR!     at ClientRequest.emit (events.js:67:17)
+ERR!     at CleartextStream.socketErrorListener (http.js:1188:9)
+ERR!     at CleartextStream.emit (events.js:67:17)
 ERR! You may report this log at:
 ERR!     <http://bugs.debian.org/npm>
 ERR! or use
 ERR!     reportbug --attach /home/nmora/Documents/react-examples/npm-debug.log npm
 ERR! 
 ERR! System Linux 3.8.0-33-generic
-ERR! command "/usr/bin/nodejs" "/usr/bin/npm" "install"
+ERR! command "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g" "jsxhint"
 ERR! cwd /home/nmora/Documents/react-examples
 ERR! node -v v0.6.19
 ERR! npm -v 1.1.4
-ERR! path /home/nmora/Documents/react-examples/package.json
-ERR! code ENOENT
-ERR! message ENOENT, open '/home/nmora/Documents/react-examples/package.json'
-ERR! errno {}
+ERR! message failed to fetch from registry: jsxhint
 verbose exit [ 1, true ]

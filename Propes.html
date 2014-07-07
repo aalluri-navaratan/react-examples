@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react-with-addons ReactLink</title>
+    <script src="http://fb.me/react-0.10.0.js"></script>
+    <script src="http://fb.me/react-with-addons-0.10.0.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.10.0.js"></script>
+</head>
+<body>
+<div id="container1"></div>
+<script type="text/jsx">
+ /** @jsx React.DOM */
+
+  var HelloMessage = React.createClass({
+    render: function() {
+      return <div>Hello {this.props.name}</div>;
+    }
+  });
+  React.renderComponent(<HelloMessage name="John" />,
+    document.getElementById('container1'));
+</script>
+</body>
+</html>
