@@ -20,23 +20,23 @@
     /** @jsx React.DOM */
     var APP = 
         React.createClass({
-            update:function(){
-                var newVal = this.props.val 
-                newVal=newVal + 1 
-                this.setProps({val:newVal})
+           update: function(){
+                 var newVal = this.props.val + 1 
+                 this.setProps({val:newVal})
             },
             componentWillMount:function(){
-                console.log("here i go")
+                console.log("componentWillMount")
             },
             
             componentDidMount:function(){
-                console.log("nice place you got here")
+                console.log("componentDidMount")
             },
             componentWillUnmount:function(){
-                console.log("goodbye cruel world!")
-            },
+                console.log("componentWillUnmount")
+            },         
+            
             render:function(){
-                console.log("hello world")
+                console.log("render")
                 return <button onClick={this.update}>{this.props.val}</button>
             },
         });

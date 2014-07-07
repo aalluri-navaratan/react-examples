@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Render Method Gotchas</title>
+    <script src="build/react-0.8.0.js"></script>
+    <script src="build/react-with-addons.js"></script>
+    <script src="build/JSXTransformer-0.8.0.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/jsx">
+ /*** @jsx React.DOM  */
+ 
+ function computeBallmerPeak(x) {
+   
+   x = x * 100;
+   return (
+     1-1/(1Math.exp(-(x-6)))*.5  Math.exp(-Math.pow(Math.abs(x-10), 2)*10)
+   ) / 1.6;
+ }
+ 
+ var BallmerPeakCalculator = React.createClass({
+   getInitialState: function() {
+     return {bac: 0};
+   },
+   handleChange: function(event) {
+     this.setState({bac: event.target.value});
+   },
+   render: function() {
+     var bac;
+     var pct;
+     pct = computeBallmerPeak(this.state.bac);
+     if (isNaN(pct)) {
+       pct = 'N/A';
+     } else {
+       pct = (100 - Math.round(pct * 100))  '%';
+     }
+     return (
+       <div>
+         <img src="logo.png" />
+         <p>Credit due to <a href="http://xkcd.com/323/">xkcd</a>.</p>
+         <h4>Compute your Ballmer Peak:</h4>
+         <p>
+           If your BAC is{' '}
+           <input type="text" onChange={this.handleChange} value={this.state.bac} />
+           {', '}then <b>{pct}</b> of your lines of code will have bugs.
+         </p>
+       </div>
+     );
+   }
+ });
+ 
+ React.renderComponent(
+   <BallmerPeakCalculator />,
+   document.getElementById('container')
+ );
+ </body>
+ </html>

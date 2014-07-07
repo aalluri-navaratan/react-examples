@@ -12,32 +12,14 @@
     </style>
 </head>
 <body>
-// <script type="text/jsx">
-// /** @jsx React.DOM */
-// var Clock = React.createClass({
-//   render: function() {
-//     return (
-//       <div onClick={this.sayHi}>
-//         The time is: {this.props.when.toLocaleString()}
-//       </div>
-//     );
-//   },
-//   sayHi: function() {
-//     alert("Hello");
-//   }
-// });
- 
-// React.renderComponent(
-//   <Clock when={new Date()} />,
-//   document.body
-// );
-<script type="text/javascript">
- var Clock = React.createClass({
+ <script type="text/jsx">
+ /** @jsx React.DOM */
+var Clock = React.createClass({
   render: function() {
-    return React.DOM.div(
-      {onClick: this.sayHi},
-      "The time is: ",
-      this.props.when.toLocaleString()
+    return (
+      <div onClick={this.sayHi}>
+        The time is: {this.props.when.toLocaleString()}
+      </div>
     );
   },
   sayHi: function() {
@@ -46,9 +28,10 @@
 });
  
 React.renderComponent(
-  Clock({when: new Date()}),
+  <Clock when={new Date()} />,
   document.body
 );
+
 </script>
 </script>
 </body>
