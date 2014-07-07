@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react-with-addons ReactLink</title>
+    <script src="http://fb.me/react-0.10.0.js"></script>
+    <script src=" http://fb.me/react-with-addons-0.10.0.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.10.0.js"></script>
+</head>
+<body>
+<div id="mountNode"></div>
+<script type="text/jsx">
+/** @jsx React.DOM */
+var GroceryList = React.createClass({
+  handleClick: function(i) {
+    console.log('You clicked: ' + this.props.items[i]);
+  },
+
+  render: function() {
+    return (
+      <div>
+        {this.props.items.map(function(item, i) {
+          return (
+            <div onClick={this.handleClick.bind(this, i)} key={i} > {item} </div>
+          );
+        }, this)}
+      </div>
+    );
+  }
+});
+
+React.renderComponent(
+  <GroceryList items={['Apple', 'Banana', 'Cranberry']} />, mountNode
+);
+
+</script>
+</body>
+</html>

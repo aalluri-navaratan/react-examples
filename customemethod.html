@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transferPropsTo</title>
+    <link rel="stylesheet"
+        href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" />
+    <script src="http://fb.me/react-0.10.0.js"></script>
+    <script src=" http://fb.me/react-with-addons-0.10.0.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.10.0.js"></script> 
+</head>
+<body>
+<div id="container"></div>
+<script type="text/jsx">
+ /** @jsx React.DOM */
+
+var MyComponent = React.createClass({
+  statics: {
+    customMethod: function(foo) {
+      return foo === 'bar';
+    }
+  },
+  render: function() {
+   
+  }
+});
+ MyComponent.customMethod('bar');  // true
+
+React.renderComponent(<MyComponent />,document.getElementById('container'))
+</script>
+</body>
+</html>
